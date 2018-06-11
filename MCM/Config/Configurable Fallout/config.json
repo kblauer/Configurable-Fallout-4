@@ -1,0 +1,455 @@
+{
+  "modName": "ConfigurableFallout",
+  "displayName": "Configurable Fallout",
+  "minMcmVersion": 1,
+  "pluginRequirements": ["ConfigurableFallout.esp"],
+  "content": [
+    {
+	  "text": "Configurable Fallout - Common Settings",
+	  "type": "section"
+	},
+	{
+	  "text": "Welcome to Configurable Fallout 1.0! Here you can change the most common settings.  Click on the other MCM pages for additional settings.",
+	  "type": "text"
+	},
+	{ "type": "spacer" },
+	{
+	  "id": "fCFOWorkWireLengthEvent:Events",
+	  "text": "Workshop Wire Max Length",
+	  "type": "slider",
+	  "help": "The max length of a power wire in workshop mode. (Default 1100)",
+	  "valueOptions": {
+		"min": 1000,
+		"max": 9999,
+		"step": 10,
+		"sourceType": "GlobalValue",
+		"sourceForm": "ConfigurableFallout.esp|F9A"
+	  }
+	},
+	{
+	  "id": "fCFOAffinityCooldownEvent:Events",
+	  "text": "Follower Affinity Cooldown Length",
+	  "type": "slider",
+	  "help": "This multiplier will be applied to follower affinity cooldowns. Below 1 will decrease the cooldowns. (Default 1)",
+	  "valueOptions": {
+		"min": 0,
+		"max": 3,
+		"step": 0.01,
+		"sourceType": "GlobalValue",
+		"sourceForm": "ConfigurableFallout.esp|F9D"
+	  }
+	},
+	{
+	  "id": "fCFONegativeAffinityEvent:Events",
+	  "text": "Follower Negative Affinity Event Strength",
+	  "type": "slider",
+	  "help": "This multiplier will be applied to negative follower affinity event strength. Below 1 will decrease the amount of affinity lost. (Default 1)",
+	  "valueOptions": {
+		"min": 0,
+		"max": 3,
+		"step": 0.01,
+		"sourceType": "GlobalValue",
+		"sourceForm": "ConfigurableFallout.esp|F9E"
+	  }
+	},
+	{
+	  "id": "fCFOFallDamageEvent:Events",
+	  "text": "Fall Damage Multiplier",
+	  "type": "slider",
+	  "help": "This multiplier will be applied to fall damage amounts. (Default 1)",
+	  "valueOptions": {
+		"min": 0,
+		"max": 3,
+		"step": 0.01,
+		"sourceType": "GlobalValue",
+		"sourceForm": "ConfigurableFallout.esp|FB6"
+	  }
+	},
+	{ "type": "spacer" },
+	{
+	  "text": "Hacking and Lockpicking",
+	  "type": "section"
+	},
+	{
+	  "id": "fCFOHackingMinEvent:Events",
+	  "text": "Minimum Words Shown While Hacking",
+	  "type": "slider",
+	  "help": "The minimum number of possible passwords shown in the hacking minigame. (Default 6)",
+	  "valueOptions": {
+		"min": 1,
+		"max": 20,
+		"step": 1,
+		"sourceType": "GlobalValue",
+		"sourceForm": "ConfigurableFallout.esp|F9B"
+	  }
+	},
+	{
+	  "id": "fCFOHackingMaxEvent:Events",
+	  "text": "Maximum Words Shown While Hacking",
+	  "type": "slider",
+	  "help": "The maximum number of possible passwords shown in the hacking minigame. (Default 20)",
+	  "valueOptions": {
+		"min": 1,
+		"max": 25,
+		"step": 1,
+		"sourceType": "GlobalValue",
+		"sourceForm": "ConfigurableFallout.esp|F9C"
+	  }
+	},
+	{
+	  "id": "fCFOTerminalSpeedEvent:Events",
+	  "text": "Terminal Display Speed",
+	  "type": "slider",
+	  "help": "The speed at which terminals are displayed. (Default 60)",
+	  "valueOptions": {
+		"min": 30,
+		"max": 1500,
+		"step": 10,
+		"sourceType": "GlobalValue",
+		"sourceForm": "ConfigurableFallout.esp|1751"
+	  }
+	},
+	{
+	  "id": "fCFOLockpickBaseSweetEvent:Events",
+	  "text": "Lockpicking Base Sweeet Spot Size",
+	  "type": "slider",
+	  "help": "The base setting for the size of the sweet spot while lockpicking. (Default 0.2)",
+	  "valueOptions": {
+		"min": 0.01,
+		"max": 1,
+		"step": 0.01,
+		"sourceType": "GlobalValue",
+		"sourceForm": "ConfigurableFallout.esp|FA5"
+	  }
+	},
+	{
+	  "id": "fCFOLockpickSweetMultEvent:Events",
+	  "text": "Lockpicking Sweet Spot Skill Multiplier",
+	  "type": "slider",
+	  "help": "The amount to increase the sweet spot while lockpicking based on Lockpick skill. (Default 0.006)",
+	  "valueOptions": {
+		"min": 0,
+		"max": 1,
+		"step": 0.001,
+		"sourceType": "GlobalValue",
+		"sourceForm": "ConfigurableFallout.esp|FA6"
+	  }
+	}
+  ],
+  "pages": [
+	{
+      "pageDisplayName": "Player Attributes",
+      "content": [
+        {
+          "text": "Primary Player Attributes",
+          "type": "section"
+        },
+		{
+		  "id": "fCFOPlayerHealthEvent:Events",
+		  "text": "Base Player Health",
+		  "type": "slider",
+		  "help": "Change the base health pool of the player by this amount. (Default 0)",
+		  "valueOptions": {
+			"min": -100,
+			"max": 1000,
+			"step": 10,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|1752"
+		  }
+		},
+		{
+		  "id": "fCFOPlayerSpeedEvent:Events",
+		  "text": "Base Player Speed",
+		  "type": "slider",
+		  "help": "Change the base speed of the player by this amount. (Default 100)",
+		  "valueOptions": {
+			"min": 0,
+			"max": 1000,
+			"step": 5,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|1753"
+		  }
+		},
+		{
+		  "id": "fCFOCarryWeightEvent:Events",
+		  "text": "Base Player Carry Weight",
+		  "type": "slider",
+		  "help": "Changes the base carry weight of the player by this amount. (Default 0)",
+		  "valueOptions": {
+			"min": -200,
+			"max": 10000,
+			"step": 10,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|F9F"
+		  }
+		},
+		{
+		  "id": "fCFOActionPointsEvent:Events",
+		  "text": "Base Player Action Points",
+		  "type": "slider",
+		  "help": "Changes the base action points of the player by this amount. (Default 0)",
+		  "valueOptions": {
+			"min": -100,
+			"max": 500,
+			"step": 5,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FA1"
+		  }
+		},
+		{ "type": "spacer" },
+		{
+          "text": "Damage Settings",
+          "type": "section"
+        },
+		{
+		  "id": "fCFOPlayerDamageMultEvent:Events",
+		  "text": "Outgoing Player Damage Multiplier",
+		  "type": "slider",
+		  "help": "Changes the amount of damage you do to enemies by this multiplier. (Default 1)",
+		  "valueOptions": {
+			"min": 0,
+			"max": 50,
+			"step": 0.05,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FA3"
+		  }
+		},
+		{
+		  "id": "fCFOIncDamageMultEvent:Events",
+		  "text": "Incoming Player Damage Multiplier",
+		  "type": "slider",
+		  "help": "Changes the amount of damage done to you by this multiplier. (Default 1)",
+		  "valueOptions": {
+			"min": 0,
+			"max": 50,
+			"step": 0.05,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FA4"
+		  }
+		}
+      ]
+    },
+	{
+      "pageDisplayName": "Experience",
+      "content": [
+        {
+          "text": "Overall Experience Settings",
+          "type": "section"
+        },
+		{
+		  "id": "fCFOXPBaseToLevelEvent:Events",
+		  "text": "Base Experience to Level",
+		  "type": "slider",
+		  "help": "Changes the base amount of experience required to level. (Default 200)",
+		  "valueOptions": {
+			"min": 10,
+			"max": 1000,
+			"step": 10,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FA7"
+		  }
+		},
+		{
+		  "id": "fCFOXPBaseBumpEvent:Events",
+		  "text": "Experience To Level Increase Per Level",
+		  "type": "slider",
+		  "help": "Changes the additional amount of experience added per level required to level up. (Default 75)",
+		  "valueOptions": {
+			"min": 10,
+			"max": 1000,
+			"step": 5,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FA8"
+		  }
+		},
+		{
+		  "id": "fCFOXPDiffMultVEEvent:Events",
+		  "text": "Experience Multiplier for Very Easy Difficulty",
+		  "type": "slider",
+		  "help": "Changes the amount of experience gained in combat by this multiplier while on Very Easy difficulty. (Default 1)",
+		  "valueOptions": {
+			"min": 0.01,
+			"max": 4,
+			"step": 0.01,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FA9"
+		  }
+		},
+		{
+		  "id": "fCFOXPDiffMultEEvent:Events",
+		  "text": "Experience Multiplier for Easy Difficulty",
+		  "type": "slider",
+		  "help": "Changes the amount of experience gained in combat by this multiplier while on Easy difficulty. (Default 1)",
+		  "valueOptions": {
+			"min": 0.01,
+			"max": 4,
+			"step": 0.01,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FAA"
+		  }
+		},
+		{
+		  "id": "fCFOXPDiffMultNEvent:Events",
+		  "text": "Experience Multiplier for Normal Difficulty",
+		  "type": "slider",
+		  "help": "Changes the amount of experience gained in combat by this multiplier while on Normal difficulty. (Default 1)",
+		  "valueOptions": {
+			"min": 0.01,
+			"max": 4,
+			"step": 0.01,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FAB"
+		  }
+		},
+		{
+		  "id": "fCFOXPDiffMultHEvent:Events",
+		  "text": "Experience Multiplier for Hard Difficulty",
+		  "type": "slider",
+		  "help": "Changes the amount of experience gained in combat by this multiplier while on Hard difficulty. (Default 1)",
+		  "valueOptions": {
+			"min": 0.01,
+			"max": 4,
+			"step": 0.01,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FAC"
+		  }
+		},
+		{
+		  "id": "fCFOXPDiffMultVHEvent:Events",
+		  "text": "Experience Multiplier for Very Hard Difficulty",
+		  "type": "slider",
+		  "help": "Changes the amount of experience gained in combat by this multiplier while on Very Hard difficulty. (Default 1)",
+		  "valueOptions": {
+			"min": 0.01,
+			"max": 4,
+			"step": 0.01,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FAD"
+		  }
+		},
+		{
+		  "id": "fCFOXPDiffMultTSVEvent:Events",
+		  "text": "Experience Multiplier for Survival Difficulty",
+		  "type": "slider",
+		  "help": "Changes the amount of experience gained in combat by this multiplier while on Survival difficulty. (Default 2)",
+		  "valueOptions": {
+			"min": 0.01,
+			"max": 4,
+			"step": 0.01,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FAE"
+		  }
+		},
+		{ "type": "spacer" },
+		{
+          "text": "Specific Experience Gain Settings",
+          "type": "section"
+        },
+		{
+		  "id": "fCFOXPRewardKillEvent:Events",
+		  "text": "Base Experience Reward for Killing an Opponent",
+		  "type": "slider",
+		  "help": "Changes the base amount of experience gained when you kill an apponent. (Default 20)",
+		  "valueOptions": {
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FB1"
+		  }
+		},
+		{
+		  "id": "fCFOXPRewardHealthThreshEvent:Events",
+		  "text": "Damage Threshold Required to Gain Experience",
+		  "type": "slider",
+		  "help": "Changes the percentage of health you have to deal to an enemy to gain experience from the kill. (Default 25)",
+		  "valueOptions": {
+			"min": 1,
+			"max": 100,
+			"step": 1,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FB7"
+		  }
+		},
+		{
+		  "id": "fCFOXPRewardMapMarkerEvent:Events",
+		  "text": "Experience Reward for Map Marker Discovery",
+		  "type": "slider",
+		  "help": "Changes the amount of experience gained when you discoer a new location. (Default 20)",
+		  "valueOptions": {
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FAF"
+		  }
+		},
+		{
+		  "id": "fCFOXPRewardHackingEvent:Events",
+		  "text": "Base Experience Reward for Terminal Hacking",
+		  "type": "slider",
+		  "help": "Changes the base amount of experience gained when you successfully hack a terminal. (Default 10)",
+		  "valueOptions": {
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FB0"
+		  }
+		},
+		{
+		  "id": "fCFOXPRewardLockpickEasyEvent:Events",
+		  "text": "Experience Reward for Picking Easy Lock",
+		  "type": "slider",
+		  "help": "Changes the amount of experience gained when you pick an easy lock. (Default 5)",
+		  "valueOptions": {
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FB2"
+		  }
+		},
+		{
+		  "id": "fCFOXPRewardLockpickAvgEvent:Events",
+		  "text": "Experience Reward for Picking Average Lock",
+		  "type": "slider",
+		  "help": "Changes the amount of experience gained when you pick an average lock. (Default 10)",
+		  "valueOptions": {
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FB3"
+		  }
+		},
+		{
+		  "id": "fCFOXPRewardLockpickHardEvent:Events",
+		  "text": "Experience Reward for Picking Hard Lock",
+		  "type": "slider",
+		  "help": "Changes the amount of experience gained when you pick a hard lock. (Default 15)",
+		  "valueOptions": {
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FB4"
+		  }
+		},
+		{
+		  "id": "fCFOXPRewardLockpickVHardEvent:Events",
+		  "text": "Experience Reward for Picking Very Hard Lock",
+		  "type": "slider",
+		  "help": "Changes the amount of experience gained when you pick a very hard lock. (Default 20)",
+		  "valueOptions": {
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"sourceType": "GlobalValue",
+			"sourceForm": "ConfigurableFallout.esp|FB5"
+		  }
+		}
+	  ]
+	}
+  ]
+}
